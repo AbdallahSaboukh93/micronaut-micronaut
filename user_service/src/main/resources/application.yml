@@ -1,0 +1,24 @@
+micronaut:
+  application:
+    name: microservice_with_micronaut
+  server:
+    port: ${SERVER_PORT:8080}
+datasources:
+  default:
+    url: jdbc:mysql://localhost:3306/user-db
+    username: root
+    password: root
+    schema-generated: CREATE-DROP
+    dialect: MYSQL
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        show_sql: true
+
+netty:
+  default:
+    allocator:
+      max-order: 3
